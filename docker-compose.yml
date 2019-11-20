@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  admin.api:
+    image: ${DOCKER_REGISTRY-}adminapi
+    build:
+      context: .
+      dockerfile: Admin.Api/Dockerfile
+
+  chinabank.api:
+    image: ${DOCKER_REGISTRY-}chinabankapi
+    build:
+      context: .
+      dockerfile: ChinaBank.Api/Dockerfile
+
+
+  security.api:
+    image: ${DOCKER_REGISTRY-}securityapi
+    build:
+      context: .
+      dockerfile: Security.Api/Dockerfile
+

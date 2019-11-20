@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 
 namespace Admin.Api.Models
 {
@@ -12,7 +12,7 @@ namespace Admin.Api.Models
 
         public static Cliente FromJson(string obj)
         {
-            return JsonConvert.DeserializeObject<Cliente>(obj);
+            return JsonSerializer.Deserialize<Cliente>(obj);
         }
     }
 }

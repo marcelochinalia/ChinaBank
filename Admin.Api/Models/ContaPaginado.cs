@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text.Json;
 
 namespace Admin.Api.Models
 {
@@ -12,7 +12,7 @@ namespace Admin.Api.Models
 
         public static ContaPaginado FromJson(string obj)
         {
-            return JsonConvert.DeserializeObject<ContaPaginado>(obj);
+            return JsonSerializer.Deserialize<ContaPaginado>(obj);
         }
     }
 }

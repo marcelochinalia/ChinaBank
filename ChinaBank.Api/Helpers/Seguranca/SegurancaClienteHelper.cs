@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using System.Net.Http;
-using Newtonsoft.Json;
 using System.Text;
 using System;
 using Microsoft.AspNetCore.Http;
+using System.Text.Json;
 
 namespace ChinaBank.Api.Helpers
 {
@@ -20,7 +20,7 @@ namespace ChinaBank.Api.Helpers
 
         public string toJson()
         {
-            return JsonConvert.SerializeObject(this);
+            return JsonSerializer.Serialize(this);
 
         }
     }
@@ -32,7 +32,7 @@ namespace ChinaBank.Api.Helpers
 
         public static ContaCriada FromJson(string obj)
         {
-            return JsonConvert.DeserializeObject<ContaCriada>(obj);
+            return JsonSerializer.Deserialize<ContaCriada>(obj);
         }
     }
 
