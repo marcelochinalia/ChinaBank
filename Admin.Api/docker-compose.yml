@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  api:
+    ports:
+      - 5000:80
+      - 5001:443
+    environment:
+      ASPNETCORE_URLS: https://+:443
+      ASPNETCORE_Kestrel__Certificates__Default__Password: china
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /root/.dotnet/https/china.pfx      
+    build:      
+      context: .
+      dockerfile: Dockerfile
